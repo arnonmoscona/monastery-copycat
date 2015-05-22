@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
  * Created by Arnon Moscona on 5/21/2015.
  * A base class for Copycat nodes.
  */
-public abstract class CopycatNode implements Node<String> {
+public class CopycatNode implements Node<String> {
     private final String id; // may depend on the protocol used
     private final Cluster cluster;
     ArrayList<Capability> path;
@@ -28,6 +28,16 @@ public abstract class CopycatNode implements Node<String> {
     @Override
     public Optional<String> getId() {
         return Optional.ofNullable(id);
+    }
+
+    @Override
+    public List<Capability> getCapabilities() {
+        return null;
+    }
+
+    @Override
+    public String getConnectionString() {
+        return null;
     }
 
     @Override
